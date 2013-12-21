@@ -208,7 +208,7 @@ arg METHOD can be one of buffer, buffer-other-window, buffer-other-frame."
       (buffer              (switch-to-buffer buf))
       (buffer-other-window (switch-to-buffer-other-window buf))
       (buffer-other-frame  (switch-to-buffer-other-frame buf)))
-    (helm-goto-line lineno)
+    (helm-goto-line lineno t)
     ;; Move point to the nearest matching regexp from bol.
     (cl-loop for reg in split-pat
              when (save-excursion
